@@ -63,45 +63,25 @@ local plugins = {
     event = { "InsertEnter" },
     cmd = { "Copilot" },
     opts = overrides.copilot,
+    lazy = false,
     config = function()
       require("copilot").setup {}
     end,
   },
-  -- {
-  -- "hrsh7th/nvim-cmp",
-  -- dependencies = {
-  --   {
-  --     "zbirenbaum/copilot-cmp",
-  --     config = function()
-  --       require("copilot_cmp").setup()
-  --     end,
-  --   },
-  -- },
-  -- opts = {
-  --   sources = {
-  --     { name = "nvim_lsp", group_index = 2 },
-  --     { name = "copilot", group_index = 2 },
-  --     { name = "luasnip", group_index = 2 },
-  --     { name = "buffer", group_index = 2 },
-  --     { name = "nvim_lua", group_index = 2 },
-  --     { name = "path", group_index = 2 },
-  --   },
-  -- },
-  -- },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+    dependencies = "neovim/nvim-lspconfig",
+    opts = function()
+      return require "custom.configs.rust-tools"
+    end,
+    config = function(_, opts)
+      require('rust-tools').setup(opts)
+    end
+  },
+  {
+    "ThePrimeagen/vim-be-good",
+  }
 }
 
 return plugins

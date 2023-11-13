@@ -6,4 +6,5 @@
 --   command = "tabdo wincmd =",
 -- })
 vim.wo.relativenumber = true
+vim.o.wrap = false;
 -- vim.g.copilot_assume_mapped = true

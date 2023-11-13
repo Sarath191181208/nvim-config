@@ -24,7 +24,7 @@ M.treesitter = {
 
 M.mason = {
   ensure_installed = {
-    "rust-analyzer",
+    -- "rust-analyzer",
     -- lua stuff
     "lua-language-server",
     "stylua",
@@ -32,6 +32,7 @@ M.mason = {
     -- web dev stuff
     "css-lsp",
     "html-lsp",
+    "tailwindcss-language-server",
     "typescript-language-server",
     "deno",
     "prettier",
