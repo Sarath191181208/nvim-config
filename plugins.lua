@@ -76,12 +76,17 @@ local plugins = {
       return require "custom.configs.rust-tools"
     end,
     config = function(_, opts)
-      require('rust-tools').setup(opts)
-    end
+      require("rust-tools").setup(opts)
+    end,
   },
   {
     "ThePrimeagen/vim-be-good",
-  }
+  },
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    opts = overrides.auto_session,
+  },
 }
 
 return plugins

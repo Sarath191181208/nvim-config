@@ -79,4 +79,8 @@ M.copilot = {
   },
 }
 
+M.auto_session = {
+  auto_session_enable_last_session = true,
+}
+
 return M
