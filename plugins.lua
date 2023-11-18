@@ -81,12 +81,13 @@ local plugins = {
   },
   {
     "ThePrimeagen/vim-be-good",
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
   {
     "rmagatti/auto-session",
     lazy = false,
     opts = overrides.auto_session,
+    dependencies = "nvim-treesitter/nvim-treesitter",
   },
 }
 
