@@ -81,6 +81,7 @@ local plugins = {
   },
   {
     "ThePrimeagen/vim-be-good",
+    event = "VeryLazy"
   },
   {
     "rmagatti/auto-session",
