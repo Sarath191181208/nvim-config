@@ -1,11 +1,11 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
--- local util = require "lspconfig/util"
 
 local lspconfig = require "lspconfig"
+local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss" }
+local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -14,6 +14,26 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.pyright.setup({
+  filetypes = { "python", "py" },
+  root_dir = util.root_pattern(".py", ".git")
+})
+
+lspconfig.gopls.setup({
+  filetypes = {"go", "gomod", "gowork", "gotmpl"},
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
 
 -- print(util.root_pattern("Cargo.toml")());
 
@@ -30,5 +50,5 @@ end
 --       }
 --     }
 -- }
--- 
+--
 -- lspconfig.pyright.setup { blabla}
