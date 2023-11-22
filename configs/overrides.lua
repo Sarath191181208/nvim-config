@@ -13,17 +13,24 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "rust",
+    "python",
   },
   indent = {
     enable = true,
-    -- disable = {
-    --   "python"
-    -- },
+    disable = {
+      "python",
+    },
   },
 }
 
 M.mason = {
   ensure_installed = {
+    -- "python-lsp-server",
+    "pyright",
+    "ruff",
+    -- "mypy",
+    "black",
+
     -- "rust-analyzer",
     -- lua stuff
     "lua-language-server",
@@ -103,7 +110,6 @@ M.auto_session = {
     pre_cwd_changed_hook = close_nvim_tree,
     post_cwd_changed_hook = open_nvim_tree,
   },
-
 }
 
 return M
