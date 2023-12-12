@@ -85,6 +85,15 @@ local plugins = {
     end,
   },
   {
+    "mg979/vim-visual-multi",
+    lazy = false,
+    init = function()
+      vim.g.VM_maps = {
+        ["Find Under"] = "<leader><C-d>",
+      }
+    end,
+  },
+  {
     "ThePrimeagen/vim-be-good",
     event = "VeryLazy",
   },
