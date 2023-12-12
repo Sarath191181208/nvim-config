@@ -34,6 +34,11 @@ local plugins = {
   },
 
   {
+    "NvChad/nvterm",
+    opts = overrides.nvterm,
+  },
+
+  {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },

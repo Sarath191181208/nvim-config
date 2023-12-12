@@ -50,6 +50,12 @@ M.mason = {
   },
 }
 
+M.nvterm = {
+  terminals = {
+    shell = "pwsh",
+  },
+}
+
 -- git support in nvimtree
 M.nvimtree = {
   git = {
