@@ -69,11 +69,23 @@ M.nvimtree = {
       show = {
         git = true,
       },
+      glyphs = {
+        git = {
+          unstaged = "M",
+          staged = "S",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "U",
+          deleted = "",
+          ignored = "◌",
+        },
+      },
     },
   },
 
   view = {
     side = "right",
+    relativenumber = true,
   },
 }
 
@@ -110,7 +122,7 @@ M.auto_session = {
   pre_save_cmds = { close_nvim_tree },
   post_save_cmds = { open_nvim_tree },
   post_open_cmds = { open_nvim_tree },
-  post_restore_cmds = { open_nvim_tree },
+  -- post_restore_cmds = { open_nvim_tree },
   cwd_change_handling = {
     restore_upcoming_session = true,
     pre_cwd_changed_hook = close_nvim_tree,
