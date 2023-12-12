@@ -5,7 +5,7 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "tailwindcss" }
+local servers = { "html", "cssls", "clangd", "tailwindcss", "dartls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,6 +13,19 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
+}
+
+lspconfig.svelte.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "svelte" },
+  root_dir = util.root_pattern("package.json", ".git"),
+}
 
 lspconfig.pyright.setup {
   on_attach = on_attach,
