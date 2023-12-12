@@ -15,6 +15,13 @@ M.general = {
   },
 }
 
+M.nvimtree = {
+  plugin = true,
+  n = {
+    ["<C-b>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+  },
+}
+
 M.telescope = {
   n = {
     ["<C-F>"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
