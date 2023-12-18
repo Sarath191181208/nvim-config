@@ -28,6 +28,15 @@ M.telescope = {
   },
 }
 
+-- require("gitsigns")
+
 -- more keybinds!
+M.gitsigns = {
+  n = {
+    ["<leader>gsh"] = { "<cmd> Gitsigns stage_hunk <CR>", "Stage hunk" },
+    ["<leader>gus"] = { "<cmd> Gitsigns undo_stage_hunk <CR>", "Undo stage hunk" },
+    ["<leader>gub"] = { "<cmd> Gitsigns reset_buffer <CR>", "Undo stage buffer" },
+  },
+}
 
 return M
