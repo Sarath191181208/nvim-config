@@ -50,4 +50,4 @@ local function format_on_save()
   }
 end
 
-format_on_save()
+-- format_on_save()
