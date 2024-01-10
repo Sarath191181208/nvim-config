@@ -14,6 +14,12 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.jdtls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  single_file_support = true,
+}
+
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
