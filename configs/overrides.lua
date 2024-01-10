@@ -14,6 +14,7 @@ M.treesitter = {
     "markdown_inline",
     "rust",
     "python",
+    "svelte",
   },
   indent = {
     enable = true,
@@ -41,6 +42,7 @@ M.mason = {
     "html-lsp",
     "tailwindcss-language-server",
     "typescript-language-server",
+    "svelte-language-server",
     "deno",
     "prettier",
 
