@@ -32,7 +32,7 @@ M.mason = {
     -- "mypy",
     "black",
 
-    -- "rust-analyzer",
+    "rust-analyzer",
     -- lua stuff
     "lua-language-server",
     "stylua",
