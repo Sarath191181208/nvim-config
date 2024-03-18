@@ -24,6 +24,25 @@ M.treesitter = {
   },
 }
 
+M.cmp = function()
+  -- setting up dadbod completion
+  local cmp = require("cmp")
+  -- cmp.setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = {
+      "sql",
+      "mysql",
+      "plsql"
+    },
+    -- command = "lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })",
+    callback = function()
+      cmp.setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+    end,
+  })
+
+  return require "plugins.configs.cmp"
+end
+
 M.mason = {
   ensure_installed = {
     -- "python-lsp-server",
@@ -31,6 +50,8 @@ M.mason = {
     "ruff",
     -- "mypy",
     "black",
+
+    "htmx-lsp",
 
     "rust-analyzer",
     -- lua stuff

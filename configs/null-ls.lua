@@ -6,7 +6,7 @@ local b = null_ls.builtins
 local sources = {
 
   -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
+  b.formatting.deno_fmt,                                                              -- choosed deno for ts/js files cuz its very fast!
   b.formatting.prettier.with { filetypes = { "html", "markdown", "css", "svelte" } }, -- so prettier works only on these filetypes
 
   -- Lua
@@ -25,6 +25,12 @@ local sources = {
   b.formatting.gofumpt,
   b.formatting.goimports_reviser,
   b.formatting.golines,
+
+  -- sql
+  b.formatting.sql_formatter.with{
+    command = { "sleek" },
+    filetypes = { "sql", "msql", "plsql" },
+  },
 }
 
 local function format_on_save()

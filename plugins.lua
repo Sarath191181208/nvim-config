@@ -27,7 +27,10 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = overrides.mason,
   },
-
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
@@ -103,6 +106,16 @@ local plugins = {
     opts = overrides.auto_session,
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
+  {
+    "tpope/vim-dadbod",
+    event = "VeryLazy"
+  },
+  {
+    "kristijanhusak/vim-dadbod-ui",
+  },
+  {
+    "kristijanhusak/vim-dadbod-completion"
+  }
 }
 
 return plugins
