@@ -115,6 +115,10 @@ local plugins = {
   },
   {
     "kristijanhusak/vim-dadbod-completion"
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false
   }
 }
 

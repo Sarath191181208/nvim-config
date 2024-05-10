@@ -1,10 +1,17 @@
 ---@type MappingsTable
 local M = {}
+
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>d"] = { '"_d', "delete without yanking" },
     ["<leader>p"] = { '[["_dP]]', "paste the text whithout copying " },
+
+    -- sending tmux commands
+    ["<C-h>"] = { "<cmd> TmuxNavigateLeft <CR>", "Window left" },
+    ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "Window down" },
+    ["<C-k>"] = { "<cmd> TmuxNavigateUp <CR>", "Window up" },
+    ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "Window right" },
   },
   i = {
     -- making ctrl+backspace = ctrl+w
