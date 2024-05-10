@@ -3,6 +3,22 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        layout_strategy = "horizontal",
+        layout_config = {
+          horizontal = {
+            prompt_position = "bottom",
+          },
+          height = 0.95,
+          prompt_position = "bottom",
+        },
+      },
+    },
+  },
+
   -- Override plugin definition options
 
   {
