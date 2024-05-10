@@ -132,8 +132,7 @@ local function open_nvim_tree()
 end
 
 M.auto_session = {
-  auto_session_enable_last_session = true,
-
+  -- auto_session_enable_last_session = true,
   -- make nvim-tree compatable with the auto-session
   log_level = "error",
   pre_save_cmds = { close_nvim_tree },
