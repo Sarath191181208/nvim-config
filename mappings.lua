@@ -12,7 +12,12 @@ M.general = {
     ["<C-j>"] = { "<cmd> TmuxNavigateDown <CR>", "Window down" },
     ["<C-k>"] = { "<cmd> TmuxNavigateUp <CR>", "Window up" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "Window right" },
-  },
+
+    -- sending rest api commands
+    ["<leader>rr"] = {"<cmd>Rest run<cr>", "Run request under the cursor"}
+    -- {
+    --   "<leader>rl", "<cmd>Rest run last<cr>", "Re-run latest request",
+    -- },
   },
   v = {
     [">"] = { ">gv", "indent" },
