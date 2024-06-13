@@ -5,7 +5,8 @@ local lspconfig = require "lspconfig"
 local util = require "lspconfig/util"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "clangd", "tailwindcss", "dartls" }
+local servers = { "html", "cssls", "clangd", "tailwindcss"}
+-- , "dartls" 
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,6 +14,20 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig.docker_compose_language_service.setup {}
+
+lspconfig.dockerls.setup {
+  settings = {
+    docker = {
+      languageserver = {
+        formatter = {
+          ignoreMultilineInstructions = true,
+        },
+      },
+    }
+  }
+}
 
 lspconfig.jdtls.setup {
   on_attach = on_attach,
