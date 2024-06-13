@@ -13,9 +13,6 @@ M.general = {
     ["<C-k>"] = { "<cmd> TmuxNavigateUp <CR>", "Window up" },
     ["<C-l>"] = { "<cmd> TmuxNavigateRight <CR>", "Window right" },
   },
-  i = {
-    -- making ctrl+backspace = ctrl+w
-    ["<C-h>"] = { "<C-w>", "Delete a word" },
   },
   v = {
     [">"] = { ">gv", "indent" },
