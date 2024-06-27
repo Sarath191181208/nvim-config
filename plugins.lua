@@ -87,7 +87,6 @@ local plugins = {
     event = { "InsertEnter" },
     cmd = { "Copilot" },
     opts = overrides.copilot,
-    lazy = false,
     config = function()
       require("copilot").setup {}
     end,

@@ -5,7 +5,7 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["<leader>d"] = { '"_d', "delete without yanking" },
-    ["<leader>p"] = { '[["_dP]]', "paste the text whithout copying " },
+    ["<leader>p"] = { '[["_dP]]', "paste the text without copying " },
 
     -- sending tmux commands
     ["<C-h>"] = { "<cmd> TmuxNavigateLeft <CR>", "Window left" },
